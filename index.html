@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>乎零 · 产品数据台</title>
+<style>
+:root{--bg:#f5f6f8;--paper:#fff;--ink:#202b32;--muted:#78838d;--line:#e9edf0;--green:#247b66;--mint:#eaf4ef;--purple:#9b90c8;--orange:#b97839}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}button,select,input{font:inherit;color:inherit}button,select{cursor:pointer}button{background:white;border:1px solid var(--line);border-radius:8px;padding:8px 13px}button:hover{background:#f0f5f2}button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--green);outline-offset:3px}.layout{display:grid;grid-template-columns:216px minmax(0,1fr);min-height:100vh}aside{background:var(--paper);border-right:1px solid var(--line);padding:30px 18px;display:flex;flex-direction:column;gap:35px}.brand{display:flex;align-items:center;gap:10px;padding:0 12px}.logo{height:32px;width:32px;border:7px solid var(--green);border-radius:50%;position:relative}.logo:after{content:'';position:absolute;background:white;width:8px;height:13px;right:-8px;top:2px}.brand strong{font-size:22px;letter-spacing:3px}.brand small{display:block;font-size:10px;letter-spacing:2px;color:var(--muted)}.navlabel{font-size:11px;color:#99a1a7;padding:0 13px;margin-bottom:12px;letter-spacing:1px}nav{display:grid;gap:7px}nav button{text-align:left;border:0;background:transparent;padding:12px 14px;color:#69747e}nav button span{display:inline-block;width:29px;font-size:17px}nav button.active{background:var(--mint);color:var(--green);font-weight:600}.sidebottom{margin-top:auto;padding:18px 12px;color:var(--muted);font-size:12px}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#409779;margin-right:7px}.workspace{min-width:0}.topbar{height:70px;background:var(--paper);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 35px;color:var(--muted);font-size:12px}.topbar b{color:#52615d;font-weight:500}.badge{display:inline-block;padding:3px 9px;border-radius:5px;background:#fff3de;color:#9a6b2b;font-size:11px}.avatar{width:29px;height:29px;border-radius:50%;background:var(--mint);color:var(--green);display:inline-grid;place-items:center;margin-left:14px}main{max-width:1550px;margin:auto;padding:30px 35px 45px}.heading{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:24px}h1{font-size:25px;line-height:1.4;margin:0 0 6px;letter-spacing:.4px}h2{font-size:15px;margin:0;font-weight:600}h3{font-size:14px;margin:0 0 12px}p{margin:0;color:var(--muted);font-size:12px}.actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.primary{background:var(--green);color:white;border-color:var(--green)}.primary:hover{background:#1c6655}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:22px;flex-wrap:wrap}.segment{display:inline-flex;background:#e9edef;padding:3px;border-radius:8px;gap:3px}.segment button{background:transparent;border:0;padding:5px 16px;font-size:12px}.segment button.active{background:white;box-shadow:0 1px 4px #18232112;color:var(--green);font-weight:600}select,input{border:1px solid #dfe5e8;background:white;border-radius:7px;padding:7px 10px;font-size:12px}.range{font-size:12px;color:#56636c}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:20px}.stat,.panel{background:var(--paper);border:1px solid var(--line);border-radius:12px}.stat{padding:19px 20px;position:relative;overflow:hidden}.stat .label{font-size:12px;color:#6c7781}.stat .value{font-size:30px;line-height:1.5;letter-spacing:-.6px;font-weight:600;font-variant-numeric:tabular-nums;margin:5px 0}.stat .sub{font-size:11px;color:var(--muted)}.accent{color:var(--green)}.stat .tiny{position:absolute;right:17px;top:17px;font-size:10px;color:#8d999f;background:#f4f7f6;padding:1px 5px;border-radius:4px}.grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:20px;margin-bottom:20px}.equal{grid-template-columns:1fr 1fr}.panel{padding:22px;min-width:0}.panelhead{display:flex;justify-content:space-between;gap:15px;align-items:flex-start;margin-bottom:18px}.panelhead p{margin-top:4px}.legend{display:flex;gap:17px;font-size:11px;color:#738087;flex-wrap:wrap}.legend i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px}.chart{height:220px;width:100%;display:block}.chart text{font-size:11px;fill:#89949c}.chart line{stroke:#edf0f2}.chart polyline{fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}.chart circle{stroke:white;stroke-width:2}.chartfoot{font-size:11px;color:var(--muted);margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}.barrow{display:grid;grid-template-columns:95px 1fr 62px;gap:13px;align-items:center;margin:16px 0;font-size:12px}.track{height:8px;border-radius:4px;background:#eff2f3;overflow:hidden}.fill{height:100%;border-radius:4px;background:#5b9c88}.barrow b{text-align:right;font-weight:500;font-variant-numeric:tabular-nums}.summaryline{display:flex;gap:25px;margin-bottom:21px}.summaryline strong{font-size:25px;font-weight:600;display:block}.summaryline small{font-size:11px;color:var(--muted)}.notice{padding:12px 15px;border:1px solid #e6ede8;background:#f1f7f3;border-radius:8px;color:#5c7266;font-size:12px;margin-bottom:20px}.warning{background:#fcf7ee;border-color:#f0e6d3;color:#967344}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:12px;white-space:nowrap;text-align:left}th{font-weight:400;color:#849098;background:#fafbfc}td,th{padding:12px 10px;border-bottom:1px solid var(--line)}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}tbody tr:last-child td{border-bottom:0}.pill{font-size:10px;border-radius:4px;padding:3px 6px;color:var(--green);background:var(--mint)}.pill.warn{background:#fff2dd;color:#ad7b3b}.link{border:0;padding:0;color:var(--green);background:none;font-size:12px}.funnel{display:grid;gap:13px}.funnelrow{display:grid;grid-template-columns:105px 1fr 70px;gap:14px;align-items:center;font-size:12px}.funnelrow .track{height:30px;background:#f5f7f6}.funnelrow .fill{border-radius:4px;background:#7bac9c}.funnelrow strong{text-align:right;font-weight:500}.footer{margin-top:20px;color:#94a0a6;font-size:11px;display:flex;justify-content:space-between;gap:20px}.split{display:flex;align-items:center;gap:18px}.donut{width:120px;height:120px;border-radius:50%;background:conic-gradient(#377f69 0 48%,#9bbcac 48% 64%,#d2b88c 64% 75%,#e8edeb 75%);display:grid;place-items:center;flex-shrink:0}.donutinner{width:92px;height:92px;background:white;border-radius:50%;display:flex;flex-direction:column;justify-content:center;text-align:center}.donutinner strong{font-size:24px}.donutinner small{font-size:10px;color:var(--muted)}.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:20px}.flow div{background:#f6f8f7;border-radius:8px;padding:15px 10px;font-size:11px;color:#65746c}.flow strong{display:block;font-size:22px;color:var(--ink);margin:8px 0}.flow small{font-size:10px}.empty{padding:20px;color:var(--muted);text-align:center}dialog{border:1px solid var(--line);border-radius:16px;padding:27px;max-width:650px;width:calc(100% - 32px);color:var(--ink);box-shadow:0 20px 90px #17352826}dialog::backdrop{background:#1b2d3e44;backdrop-filter:blur(3px)}dialog p{font-size:13px;line-height:1.9;margin:13px 0}dialog .panelhead{align-items:center}dialog h2{font-size:19px}.detailrow{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:12px;font-size:13px}.search{width:210px}.smallnote{font-size:11px;color:var(--muted);margin-top:14px}.stages{display:flex;height:17px;border-radius:5px;overflow:hidden;margin:20px 0}.stages span{display:block}#toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);padding:10px 20px;background:#263d34;color:white;border-radius:8px;font-size:13px;display:none;z-index:5}@media(min-width:1450px){main{padding-top:36px}.chart{height:245px}.stat{padding:23px}}@media(max-width:1100px){.layout{grid-template-columns:175px minmax(0,1fr)}main{padding:25px 22px}.topbar{padding:0 22px}.cards{gap:10px}.stat{padding:16px 13px}.stat .value{font-size:26px}.grid{grid-template-columns:1fr}.flow{grid-template-columns:repeat(5,1fr)}}@media(max-width:700px){.layout{display:block}aside{padding:14px;gap:14px;border-bottom:1px solid var(--line)}.brand small,.navlabel,.sidebottom{display:none}.brand strong{font-size:19px}.logo{height:26px;width:26px;border-width:5px}nav{display:flex;overflow:auto;gap:4px}nav button{white-space:nowrap;padding:8px 10px;font-size:12px}nav button span{display:none}.topbar{height:48px;padding:0 16px}.topbar .crumb{display:none}main{padding:22px 16px}.heading{flex-wrap:wrap}h1{font-size:23px}.cards{grid-template-columns:1fr 1fr}.panel{padding:17px}.flow{grid-template-columns:1fr 1fr}.barrow{grid-template-columns:85px 1fr 58px;gap:8px}.panelhead{flex-wrap:wrap}.stat .value{font-size:26px}.footer{flex-direction:column;gap:3px}.actions{gap:5px}.split{gap:12px}.search{width:100%}}
+.ratevalue{font-size:29px;font-weight:600;color:var(--green);line-height:1.5;margin:6px 0;font-variant-numeric:tabular-nums}.fraction{font-size:12px;color:#53645b;margin:6px 0}.ratebars .barrow{grid-template-columns:88px 1fr 104px}.ratebars .barrow b small{display:block;color:var(--muted);font-size:10px}.rategrid{margin-top:20px}.rategrid .panel{height:100%}@media(max-width:700px){.ratebars .barrow{grid-template-columns:78px 1fr 90px}.ratevalue{font-size:26px}}.metric-help{cursor:help}.metric-help:is(h2,small,th,span){text-decoration:underline dotted #a7b9af;text-underline-offset:5px}.metric-help:focus-visible{outline:2px solid #247b66;outline-offset:3px;border-radius:4px}.stat.metric-help:hover{border-color:#aacbbc}.stat.metric-help .label:after{content:' ⓘ';color:#82968b;font-size:12px}#metricTip{position:fixed;z-index:1000;width:340px;max-width:calc(100vw - 24px);padding:16px 18px;border:1px solid #dbe5de;border-radius:11px;background:#fff;color:#33483e;box-shadow:0 8px 35px #193d3426;font-size:13px;line-height:1.75;max-height:calc(100vh - 24px);overflow:auto}#metricTip[hidden]{display:none}#metricTip strong{display:block;margin-bottom:7px;font-size:14px;color:#246b56}#metricTip div{white-space:pre-line}#metricTip small{display:block;font-size:11px;color:#8b9891;border-top:1px solid #edf1ee;margin-top:10px;padding-top:8px}#metricTip .metric-formula{background:#edf5f0;border-radius:7px;padding:11px 12px;color:#205f4b;font-weight:600;line-height:1.7;margin-bottom:10px}#metricTip .metric-explanation{font-size:12px;color:#66776e;line-height:1.7}</style></head>
+<body><div class="layout"><aside><div class="brand"><div class="logo"></div><div><strong>乎零</strong><small>PRODUCT ANALYTICS</small></div></div><div><div class="navlabel">数据工作台</div><nav aria-label="主导航"><button data-page="overview" class="active"><span>◫</span>数据总览</button><button data-page="users"><span>◎</span>用户与使用</button><button data-page="conversion"><span>◇</span>待办转化</button><button data-page="operations"><span>⌁</span>运行监控</button><button data-page="tasks"><span>▤</span>任务明细</button></nav></div><div class="sidebottom"><span class="dot"></span>交互原型 · v0.1<br>数据为演示样本<br>指标口径待联调确认</div></aside><div class="workspace"><header class="topbar"><div class="crumb">工作空间 <span style="padding:0 12px;color:#c3cbd0">/</span><b id="crumb">数据总览</b></div><div><span class="badge">演示数据 · 未连接生产环境</span><span class="avatar">乎</span></div></header><main><div class="heading"><div><h1 id="title">每一次记录，都看得见。</h1><p id="subtitle">从戒指佩戴到待办确认，了解产品的使用与运行情况。悬浮指标可查看定义，点击可固定。</p></div><div class="actions"><button id="definitions">指标口径</button><button id="export" class="primary">导出当前数据 ↓</button></div></div><div class="toolbar"><div class="actions"><div class="segment" id="periods"><button data-period="day" class="active">日</button><button data-period="month">月</button><button data-period="year">年</button></div><label class="range" for="date">统计日期</label><input id="date" type="date" value="2026-10-12" min="2026-01-01" max="2026-10-12"></div><span class="range" id="range"></span></div><div id="content" aria-live="polite"></div><footer class="footer"><span>乎零 · 产品数据台 / 数据均为合成样本，用于讨论页面与口径</span><span>北京时间 UTC+8 · 排除演示录音与内部测试账号</span></footer></main></div></div><dialog id="modal"><div class="panelhead"><h2 id="modalTitle"></h2><button id="closeModal" aria-label="关闭弹窗">关闭 ×</button></div><div id="modalBody"></div></dialog><div id="toast" role="status"></div>
+<script>
+'use strict';
+const $=s=>document.querySelector(s), fmt=n=>Number(n).toLocaleString('zh-CN');
+let page='overview',period='day',source='all';
+const labels={overview:'数据总览',users:'用户与使用',conversion:'待办转化',operations:'运行监控',tasks:'任务明细'};
+const names={day:'日',month:'月',year:'年'};
+function data(){const k=period==='day'?1:period==='month'?18:155;const dateOffset=Number($('#date').value.slice(-2))||12;const f=1+(dateOffset-12)*.008;return {registered:Math.round(12864*f),bound:Math.round(8420*f),worn:Math.round((period==='day'?4862:period==='month'?7284:8046)*f),ring:Math.round((period==='day'?2386:period==='month'?5680:7040)*f),phone:Math.round((period==='day'?1084:period==='month'?3160:5610)*f),both:Math.round((period==='day'?326:period==='month'?1680:4320)*f),app:Math.round((period==='day'?3652:period==='month'?7916:11240)*f),recordings:Math.round(6832*k*f),generated:Math.round(1250*k*f),wear:[280,640,1310,2632,940,2618].map(n=>Math.round(n*(period==='day'?1:period==='month'?12:95)*f))};}
+function pct(n,d){return d>0?(n/d*100).toFixed(1)+'%':'—'}
+function rateCard(label,n,d,denominator,tag=''){return `<div class="stat"><div class="label">${label}</div>${tag?`<span class="tiny">${tag}</span>`:''}<div class="ratevalue">${pct(n,d)}</div><div class="fraction">${fmt(n)} / ${fmt(d)} 人</div><div class="sub">${denominator}</div></div>`}
+function behaviorRates(){const d=data();const triggered=Math.round(d.worn*.56),phoneTriggered=Math.min(d.app,Math.round(d.phone*1.18)),ringValid=Math.min(d.ring,Math.round(triggered*.90));const full=4200,continuous=2310;return `<div class="cards rategrid">${rateCard('戒指绑定率',d.bound,d.registered,'当前绑定戒指 / 累计注册用户','期末')}${rateCard('佩戴检出率',d.worn,d.bound,'有佩戴记录 / 当前绑定用户',names[period])}${rateCard('录音活跃率',d.ring+d.phone-d.both,d.registered,'有效录音用户 / 累计注册用户',names[period])}${rateCard('App 活跃率',d.app,d.registered,'前台使用用户 / 累计注册用户',names[period])}</div><div class="grid equal">${panel('佩戴后，有多少人触发录音？','同一周期、同一批佩戴用户内计算',`<div class="ratevalue">${pct(triggered,d.worn)}</div><div class="fraction">${fmt(triggered)} 人触发戒指录音 / ${fmt(d.worn)} 人检测到佩戴</div><div class="chartfoot">分子取佩戴用户与录音触发用户的交集。触发即开始录音，不要求最终有效；这批触发用户中，有效录音率为 <b>${pct(ringValid,triggered)}</b>（${fmt(ringValid)} / ${fmt(triggered)} 人）。</div>`)}${panel('持续佩戴率','截至所选日的最近 7 个完整日 · 阈值为讨论稿',`<div class="ratevalue">${pct(continuous,full)}</div><div class="fraction">${fmt(continuous)} / ${fmt(full)} 人，连续 7 天每天佩戴 ≥ 6 小时</div><div class="chartfoot">分母为观察窗开始前已绑定且 7 天佩戴数据完整的用户。数据完整率 ${pct(full,d.bound)}（${fmt(full)} / ${fmt(d.bound)} 名期初已绑定演示用户）；缺失用户不按未达标计算。切换日 / 月 / 年时，此指标始终是截至所选日的滚动 7 日窗口。</div>`)}</div><div class="notice">手机录音触发率：<b>${pct(phoneTriggered,d.app)}</b>（${fmt(phoneTriggered)} / ${fmt(d.app)} 名 App 活跃用户）。分子为同批 App 活跃用户中启动手机录音的人数。所有比率由分子 / 分母计算，分母为 0 时显示“—”。</div>`}
+function stat(label,value,sub,tag=''){return `<div class="stat"><div class="label">${label}</div>${tag?`<span class="tiny">${tag}</span>`:''}<div class="value">${value}</div><div class="sub">${sub}</div></div>`}
+function panel(title,sub,body,extra=''){return `<section class="panel"><div class="panelhead"><div><h2>${title}</h2><p>${sub}</p></div>${extra}</div>${body}</section>`}
+function bars(rows,color='#5b9c88'){let max=Math.max(...rows.map(r=>r[1]));return rows.map(r=>`<div class="barrow"><span>${r[0]}</span><div class="track"><div class="fill" style="width:${r[1]/max*100}%;background:${r[2]||color}"></div></div><b>${fmt(r[1])}</b></div>`).join('')}
+function chart(){const d=data(),base=period==='day'?d.ring:period==='month'?d.ring/2:d.ring;const ring=[.65,.71,.68,.8,.74,.88,1].map(v=>Math.round(v*base)),phone=[.33,.35,.32,.41,.36,.4,.45].map(v=>Math.round(v*base));let dates=[];let dt=new Date($('#date').value+'T00:00:00');for(let i=6;i>=0;i--){let t=new Date(dt);if(period==='day')t.setDate(t.getDate()-i);else if(period==='month')t.setDate(Math.max(1,t.getDate()-i*2));else t.setMonth(t.getMonth()-i);dates.push(period==='year'?`${t.getMonth()+1}月`:`${t.getMonth()+1}/${t.getDate()}`)}const top=Math.ceil(base/1000)*1000;const y=v=>188-v/top*160,x=i=>48+i*80;return `<svg class="chart" viewBox="0 0 550 220" role="img" aria-label="戒指与手机录音活跃用户趋势，悬停数据点查看人数"><title>录音活跃用户趋势（演示）</title>${[0,.5,1].map(t=>`<line x1="48" y1="${y(top*t)}" x2="528" y2="${y(top*t)}"/><text x="38" y="${y(top*t)+4}" text-anchor="end">${fmt(top*t)}</text>`).join('')}<polygon points="48,188 ${ring.map((v,i)=>`${x(i)},${y(v)}`).join(' ')} 528,188" fill="#edf5f1"/><polyline points="${ring.map((v,i)=>`${x(i)},${y(v)}`).join(' ')}" stroke="#327e68"/><polyline points="${phone.map((v,i)=>`${x(i)},${y(v)}`).join(' ')}" stroke="#9b90c8" stroke-dasharray="5 4"/>${ring.map((v,i)=>`<circle cx="${x(i)}" cy="${y(v)}" r="4" fill="#327e68"><title>${dates[i]} · 戒指 ${fmt(v)} 人 · 手机 ${fmt(phone[i])} 人</title></circle><text x="${x(i)}" y="213" text-anchor="middle">${dates[i]}</text>`).join('')}</svg><div class="chartfoot">同一用户可使用两种来源；总活跃人数按用户去重。</div>`}
+function wear(){const d=data(),total=d.wear.reduce((a,b)=>a+b,0),wearing=d.wear.slice(0,4).reduce((a,b)=>a+b,0),known=total-d.wear[5];return `<div class="summaryline"><div><strong>${pct(d.wear[3],wearing)}</strong><small>长时佩戴占比 · ≥12 小时 / 有佩戴</small></div><div><strong>${pct(known,total)}</strong><small>佩戴数据覆盖率 · 已知 / 全部</small></div></div><div class="ratebars">${['0–2 小时','2–6 小时','6–12 小时','12–24 小时','已知未佩戴','数据未知'].map((label,i)=>`<div class="barrow"><span>${label}</span><div class="track"><div class="fill" style="width:${total?d.wear[i]/total*100:0}%;background:${i===5?'#d3dadd':i===4?'#becbc5':'#5b9c88'}"></div></div><b>${pct(d.wear[i],total)}<small>${fmt(d.wear[i])} ${period==='day'?'人':'人日'}</small></b></div>`).join('')}</div><div class="chartfoot">各档占比均以全部绑定${period==='day'?'用户':'用户人日'} ${fmt(total)} 为分母，含未知。长时佩戴：${fmt(d.wear[3])} / ${fmt(wearing)} ${period==='day'?'人':'人日'}。${period==='day'?'':'月 / 年按每日人日累计，不等于周期用户比例。'}0–2 小时不含 0，各档左闭右开，最后一档含 24 小时。</div>`}
+
+function trendPanel(){return panel('录音活跃趋势',period==='day'?'近 7 日 · 至少一条有效录音':period==='month'?'所选月内抽样日 · 每日去重用户':'近 7 月 · 每月去重用户',chart(),'<div class="legend"><span><i style="background:#327e68"></i>戒指</span><span><i style="background:#9b90c8"></i>手机</span></div>')}
+function wearPanel(){return panel('佩戴时长分布','按每日累计佩戴时长分档 · 演示分档，可调整',wear())}
+function sourceSelect(){return `<label class="range">录音来源 <select id="source"><option value="all">全部来源</option><option value="ring">仅戒指</option><option value="phone">仅手机</option></select></label>`}
+function overview(){let d=data(),active=d.ring+d.phone-d.both;return `<div class="cards">${stat('累计注册用户',fmt(d.registered),'当前绑定戒指 '+fmt(d.bound)+' 人','截至期末')}${stat('检测到佩戴的用户',fmt(d.worn),'按用户去重 · 时长分布见下方',names[period])}${stat('录音活跃用户',fmt(active),'戒指 '+fmt(d.ring)+' · 手机 '+fmt(d.phone),names[period])}${stat(period==='day'?'App DAU':period==='month'?'App MAU':'App 年活跃用户',fmt(d.app),'以前台使用事件统计 · 周期内去重',names[period])}</div>${behaviorRates()}<div class="grid">${trendPanel()}${wearPanel()}</div><div class="grid equal">${panel('待办被采用了吗？','按生成批次观察 · 已满 7 日的演示批次',`<div class="split"><div class="donut"><div class="donutinner"><strong>64.0<span style="font-size:13px">%</span></strong><small>7 日确认率</small></div></div><div style="flex:1">${bars([['直接确认',600],['修改后确认',200],['明确不要',137],['尚未确认',313]])}</div></div><div class="chartfoot">直接确认 48.0% · 修改后确认 16.0% · 明确不要 11.0% · 尚未确认 25.0%（均占生成总数）。<br>确认 800 / 生成 1,250 条 · 未满 7 日的批次不纳入最终值。</div>`,`<button class="link" data-goto="conversion">查看转化 →</button>`)}${panel('运行概况','所选周期 · 成功任务耗时，失败任务单独统计',`<div class="summaryline"><div><strong>98.6<span style="font-size:13px">%</span></strong><small>任务处理成功率</small></div><div><strong>12.8 <span style="font-size:13px">s</span></strong><small>云端完整处理 P95</small></div></div>${table(['传输阶段','有效传输速率','首次传输成功率'],[['戒指 → 手机','160 KB/s','96.8%'],['手机 → 云端','1,280 KB/s','98.2%']],false)}<div class="chartfoot">传输效率按文件大小归一化；进入运行监控查看速率 P50 / P5 与耗时明细。</div>`,`<button class="link" data-goto="operations">查看监控 →</button>`)}</div>`}
+function table(headers,rows,numeric=true){return `<div class="tablewrap"><table><thead><tr>${headers.map((h,i)=>`<th ${numeric&&i?'class="num"':''}>${h}</th>`).join('')}</tr></thead><tbody>${rows.map(row=>`<tr>${row.map((c,i)=>`<td ${numeric&&i?'class="num"':''}>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`}
+function users(){let d=data(),active=d.ring+d.phone-d.both;const functions=[['查看转写',.8,.9],['录音整理',.51,.65],['待办确认',.3,.4],['搜索记录',.23,.28],['查看健康',.2,.22]];return `<div class="notice">有效录音沿用现有转写链路判定；触发录音与有效录音分开计数。率的分母显示在指标下方，人数按同一统计周期去重。</div><div class="cards">${rateCard('戒指有效录音活跃率',d.ring,d.bound,'有效戒指录音用户 / 当前绑定用户')}${rateCard('手机有效录音活跃率',d.phone,d.registered,'有效手机录音用户 / 累计注册用户')}${rateCard('双来源使用占比',d.both,active,'双来源用户 / 总录音活跃用户')}${rateCard('总录音活跃率',active,d.registered,'有效录音去重用户 / 累计注册用户')}</div>${behaviorRates()}<div class="grid">${trendPanel()}${wearPanel()}</div><div class="grid equal">${panel('账号与 App 使用','各分子均为对应分母人群中的用户，期末规模作为渗透率基数',table(['指标','人数','占注册用户'],[['累计注册',fmt(d.registered),'100.0%'],['当前绑定戒指',fmt(d.bound),pct(d.bound,d.registered)],[period==='day'?'App DAU':period==='month'?'App MAU':'App 年活跃',fmt(d.app),pct(d.app,d.registered)]]))}${panel('功能使用率排行','分母：同周期 App 活跃用户 '+fmt(d.app)+' 人；仅统计该人群内的功能使用',table(['功能','使用人数','使用率','成功次数'],functions.map(([name,share,times])=>{let n=Math.round(d.app*share);return [name,fmt(n),pct(n,d.app),fmt(Math.round(d.recordings*times))]})))}</div>`}
+
+function conversion(){let d=data(),mult=source==='all'?1:source==='ring'?.72:.28,n=Math.round(d.generated*mult),yes=Math.round(n*.64),direct=Math.round(n*.48),reject=Math.round(n*.11);return `<div class="notice">7 日确认率按生成批次计算。此页展示所选周期向前平移 7 天的成熟演示批次，所有条目均已完成观察；删除不会缩小历史分母。</div><div class="actions" style="margin-bottom:18px">${sourceSelect()}<span class="range">仅统计 AI 生成待办 · 排除录音容器、备忘和手动待办</span></div><div class="cards">${stat('生成待办',fmt(n),'已完成 7 日观察的条目')}${stat('7 日确认率','64.0%','确认 '+fmt(yes)+' / 生成 '+fmt(n))}${stat('24 小时确认率','51.2%','同一成熟批次的早期确认')}${stat('确认耗时中位数','3.6 小时','仅统计已确认条目')}</div><div class="grid equal">${panel('从生成到行动','每条待办只计一次；全部确认按实际条目数统计',`<div class="funnel">${[['生成待办',n,100],['用户确认',yes,64],['确认后完成',Math.round(yes*.58),37.1]].map(r=>`<div class="funnelrow"><span>${r[0]}</span><div class="track"><div class="fill" style="width:${r[2]}%"></div></div><strong>${fmt(r[1])}</strong></div>`).join('')}</div><div class="chartfoot">确认后完成率 58.0% · 截至生成后第 7 日，不代表最终完成率。</div>`)}${panel('确认状态分布','以生成后第 7 日的状态为准',bars([['直接确认',direct],['修改后确认',yes-direct],['明确不要',reject],['尚未确认',n-yes-reject]])+`<div class="chartfoot">占生成总数：直接确认 ${pct(direct,n)} · 修改后确认 ${pct(yes-direct,n)} · 明确不要 ${pct(reject,n)} · 尚未确认 ${pct(n-yes-reject,n)}。<br>“尚未确认”包含未处理和未明确拒绝的条目，不能直接当成拒绝。</div>`)}</div>${panel('来源对比','演示比例用于布局评审，不代表实际表现',table(['来源','生成条数','7 日确认率','修改后确认占全部','确认后完成率'],(source==='all'?['戒指','手机']:source==='ring'?['戒指']:['手机']).map(s=>[s,fmt(Math.round(d.generated*(s==='戒指'?.72:.28))),'64.0%','16.0%','58.0%'])))}`}
+function transferEfficiency(){const d=data();const rows=[['戒指 → 手机',Math.round(d.recordings*.7),160,145,48,3.2,.968],['手机 → 云端',d.recordings,1280,1140,220,.4,.982]];return `<div class="grid equal">${rows.map(([name,n,speed,p50,p5,perMinute,firstRate])=>{const first=Math.round(n*firstRate);return panel(name+' · 传输效率','所选周期 · 演示样本 · 速率越高越好',`<div class="summaryline"><div><strong>${fmt(speed)} <span style="font-size:13px">KB/s</span></strong><small>有效传输速率</small></div><div><strong>${pct(first,n)}</strong><small>首次传输成功率</small></div></div>${table(['指标','数值'],[['P50 传输速率',fmt(p50)+' KB/s'],['P5 传输速率',fmt(p5)+' KB/s'],['每分钟录音传输耗时',perMinute.toFixed(1)+' 秒/分钟'],['首次成功 / 首次尝试已结束',fmt(first)+' / '+fmt(n)+' 个文件']],false)}<div class="chartfoot">有效速率 = 成功传输的有效字节总量 / 对应总传输耗时。重传字节不重复计入，耗时包含传输期间重试等待；上传前离线等待单列。</div>`)}).join('')}</div>${panel('按文件大小比较传输效率','同大小档、同链路比较 · KB = 1,000 字节；MB = 1,000,000 字节',table(['文件大小','戒指有效速率','云端有效速率'],[['≤ 1 MB','112 KB/s','760 KB/s'],['> 1–5 MB','164 KB/s','1,320 KB/s'],['> 5–20 MB','178 KB/s','1,560 KB/s'],['> 20 MB','181 KB/s','1,640 KB/s']]))}<div class="smallnote" style="margin-bottom:20px">P5 用于观察慢速一侧；每分钟录音传输耗时受编码和压缩率影响，应在同一音频格式内比较。速率仅统计成功传输，失败表现结合首次成功率与最终失败率查看。</div>`}
+function operations(){let d=data();return `<div class="notice warning">演示异常：存在 12 条等待超过 60 秒的任务。点击任务明细，可查看阶段与失败原因。阈值仅用于原型展示。</div><div class="cards">${stat('处理成功率','98.6%','包含重试后成功的任务')}${stat('ASR 平均耗时','2.4 s','P95 6.2 s · P99 11.8 s')}${stat('ASR 耗时比','0.08','总转写耗时 / 总音频时长')}${stat('当前排队','23','其中 12 条等待超过 60 秒','快照')}</div>${transferEfficiency()}${panel('录音处理链路','传输看效率，处理看耗时；各阶段独立测量',`<div class="flow">${[['戒指 → 手机','160 KB/s','有效传输速率'],['手机 → 云端','1,280 KB/s','有效传输速率'],['等待处理','0.8 s','队列耗时'],['ASR 转写','2.4 s','完整转写结果'],['整理与待办','3.1 s','内容处理耗时']].map(r=>`<div>${r[0]}<strong>${r[1]}</strong><small>${r[2]}</small></div>`).join('')}</div><div class="chartfoot">戒指上传包含蓝牙传输和云端上传，分段记录；录音结束后的离线等待单列，避免混入传输速度。</div>`)}<div style="height:20px"></div>${panel('原始耗时与可靠性明细','用于解释用户等待；不直接比较大小不同文件的传输效率',table(['阶段','成功样本数','平均','P50','P95','P99','失败率'],[['戒指 → 手机',fmt(Math.round(d.recordings*.7)),'3.2 s','2.6 s','8.4 s','15.2 s','0.8%'],['手机 → 云端',fmt(d.recordings),'1.8 s','1.3 s','5.6 s','9.8 s','0.6%'],['ASR 转写',fmt(Math.round(d.recordings*.99)),'2.4 s','1.9 s','6.2 s','11.8 s','0.5%'],['转写任务（含排队 / 重试）',fmt(Math.round(d.recordings*.99)),'3.4 s','2.5 s','8.6 s','16.1 s','0.5%'],['云端完整处理',fmt(Math.round(d.recordings*.986)),'6.5 s','5.2 s','12.8 s','24.6 s','1.4%']]))}<div style="height:20px"></div><div class="grid equal">${panel('ASR 按音频长度比较','避免长录音占比变化影响整体耗时判断',table(['音频时长','平均耗时','P95'],[['≤ 30 秒','1.3 s','3.2 s'],['30 秒–2 分钟','3.8 s','8.6 s'],['2–10 分钟','12.5 s','23.1 s'],['> 10 分钟','42.6 s','81.2 s']]))}${panel('失败原因分布','按最终失败任务统计，重试成功不计为最终失败',bars([['上传超时',38],['转写超时',24],['音频损坏',18],['内容处理失败',16]],'#bd9560'),`<button class="link" data-goto="tasks">查看任务 →</button>`)}</div>`}
+const taskRows=[['REC-10248','戒指','42 秒','已完成','5.8 s'],['REC-10247','手机','1 分 16 秒','已完成','8.2 s'],['REC-10246','戒指','28 秒','处理中','67.0 s'],['REC-10245','戒指','2 分 04 秒','失败','30.0 s'],['REC-10244','手机','12 秒','无效录音','1.2 s'],['REC-10243','戒指','56 秒','已完成','6.1 s']];
+function taskTable(){const q=($('#search')?.value||'').toUpperCase(),status=$('#status')?.value||'all';let rows=taskRows.filter(r=>r[0].includes(q)&&(status==='all'||r[3]===status));$('#taskTable').innerHTML=rows.length?table(['录音 ID','来源','音频时长','状态','任务耗时','操作'],rows.map(r=>[r[0],r[1],r[2],`<span class="pill ${r[3]!=='已完成'?'warn':''}">${r[3]}</span>`,r[4],`<button class="link" data-task="${r[0]}">查看时间线 →</button>`]),false):'<div class="empty">没有符合条件的任务</div>'}
+function tasks(){return `<div class="notice">任务明细为固定演示样本，不随顶部日期变化。选择状态或搜索录音 ID，查看不同处理状态。</div><section class="panel"><div class="panelhead"><div><h2>录音任务</h2><p>业务任务按录音去重，重试保留单独尝试记录。</p></div><div class="actions"><input class="search" id="search" placeholder="搜索录音 ID，如 10245" aria-label="搜索录音 ID"><select id="status" aria-label="任务状态"><option value="all">全部状态</option><option>已完成</option><option>处理中</option><option>失败</option><option>无效录音</option></select></div></div><div id="taskTable"></div></section>`}
+function render(){const titles={overview:['每一次记录，都看得见。','从戒指佩戴到待办确认，了解产品的使用与运行情况。悬浮指标可查看定义，点击可固定。'],users:['用户如何使用乎零','佩戴、录音与 App 使用，分别观察，交叉理解。'],conversion:['让记录，变成行动。','衡量生成的待办是否被用户接受，并最终完成。'],operations:['看清每一段等待','从戒指同步到结果就绪，定位耗时与异常。'],tasks:['沿着一条录音，找到问题。','查看处理阶段、耗时与任务最终状态。']};$('#title').textContent=titles[page][0];$('#subtitle').textContent=titles[page][1];$('#crumb').textContent=labels[page];$('#range').textContent=period==='day'?$('#date').value+' · 完整日':period==='month'?$('#date').value.slice(0,7)+' · 截至所选日':$('#date').value.slice(0,4)+' 年 · 截至所选日';document.querySelectorAll('[data-page]').forEach(b=>{b.classList.toggle('active',b.dataset.page===page);b.setAttribute('aria-current',b.dataset.page===page?'page':'false')});document.querySelectorAll('[data-period]').forEach(b=>{b.classList.toggle('active',b.dataset.period===period);b.setAttribute('aria-pressed',String(b.dataset.period===period))});$('#content').innerHTML=({overview,users,conversion,operations,tasks})[page]();if($('#source')){$('#source').value=source;$('#source').onchange=e=>{source=e.target.value;render()}}if(page==='tasks'){taskTable();$('#search').oninput=taskTable;$('#status').onchange=taskTable} }
+function modal(title,body){$('#modalTitle').textContent=title;$('#modalBody').innerHTML=body;$('#modal').showModal()}
+$('#closeModal').onclick=()=>$('#modal').close();$('#modal').onclick=e=>{if(e.target===$('#modal'))$('#modal').close()};
+document.addEventListener('click',e=>{let b=e.target.closest('button');if(!b)return;if(b.dataset.page||b.dataset.goto){page=b.dataset.page||b.dataset.goto;render()}if(b.dataset.period){period=b.dataset.period;render()}if(b.dataset.task){let r=taskRows.find(t=>t[0]===b.dataset.task);let stages=r[3]==='已完成'?[['云端接收','完成'],['队列等待','0.4 s'],['ASR 转写',r[0]==='REC-10247'?'3.5 s':r[0]==='REC-10243'?'2.2 s':'2.0 s'],['整理与待办',r[0]==='REC-10247'?'4.3 s':r[0]==='REC-10243'?'3.5 s':'3.4 s']]:r[3]==='失败'?[['云端接收','完成'],['队列等待','0.3 s'],['ASR 请求','29.7 s · 超时'],['整理与待办','未开始']]:r[3]==='处理中'?[['云端接收','完成'],['队列等待','67.0 s · 仍在等待'],['ASR 转写','未开始']]:[['云端接收','完成'],['有效性判定','1.2 s · 无有效文字'],['整理与待办','不进入处理']];modal(r[0]+' · '+r[3],`<p>${r[1]}录音 · 音频 ${r[2]} · 云端任务耗时 ${r[4]} · 演示时间线</p>${stages.map(s=>`<div class="detailrow"><span>${s[0]}</span><strong>${s[1]}</strong></div>`).join('')}<p>有效性状态复用转写链路判定。本原型不展示用户录音或转写正文。</p>`)}});
+$('#date').onchange=()=>{if(!$('#date').value)$('#date').value='2026-10-12';render()};
+$('#definitions').onclick=()=>modal('指标口径 · 讨论版',`<p><b>比率分母：</b>绑定率、总录音活跃率与 App 活跃率采用期末累计注册人数作基数；戒指有效录音活跃率采用当前绑定用户。涉及绑定群体的周期分子只取当前绑定群体内的用户；解绑用户不混入分子。原型按此生成演示样本。</p><p><b>录音触发率：</b>戒指以同周期有佩戴记录的用户为分母，分子为其中启动戒指录音的人；手机以 App 活跃用户为分母。开始录音不等于最终有效，录音活跃另按有效结果计算。</p><p><b>持续佩戴：</b>暂定连续 7 个完整日，每天累计 ≥6 小时；分母为期初已绑定且全窗数据完整的用户，同时显示数据完整率。≥12 小时的长时佩戴占比按有佩戴的人 / 人日计算，与连续多日佩戴分开。</p><p><b>功能使用率：</b>分子为同周期 App 活跃人群中使用该功能的去重人数，分母为该周期 App 活跃人数。所有比例分母为 0 时显示“—”。</p><p><b>录音活跃：</b>戒指和手机都计入，分别展示；总人数按用户去重，不直接相加。有效录音沿用现有转写中的声音、文本判定，接入时核对准确状态字段，不另设新算法。</p><p><b>佩戴时长：</b>按每日累计佩戴时间分档；重叠区间先合并。日视图单位为人，月 / 年视图按人日累计，同时顶部人数按周期去重。数据不足归为未知，不当作未佩戴。</p><p><b>App 活跃：</b>前台使用至少一次；后台同步不算。月和年人数独立去重，不能累加 DAU。</p><p><b>待办确认率：</b>生成后 7 日内确认数 / 同批次生成数。直接确认和修改后确认都算，明确不要仍保留在分母；未满 7 日标记观察中。原型采用成熟演示批次。</p><p><b>运行耗时：</b>成功样本计算平均值、P50、P95、P99；失败、超时和处理中任务单列。转写任务包含排队与重试，完整云端处理还包含整理和待办提取。</p><p><b>时间与数据：</b>北京时间；迟到事件按实际发生日期回补。所有数字都是合成演示数据，日期切换用于体验交互，不能用于业务判断。</p>`);
+$('#export').onclick=()=>{const rows=[['乎零数据后台：合成演示数据，非生产数据'],['页面',labels[page]],['周期',names[period]],['日期',$('#date').value]];document.querySelectorAll('#content .stat').forEach(el=>rows.push([el.querySelector('.label').textContent,el.querySelector('.value,.ratevalue').textContent,el.querySelector('.fraction')?.textContent||'',el.querySelector('.sub').textContent]));document.querySelectorAll('#content table').forEach(t=>{rows.push([]);t.querySelectorAll('tr').forEach(tr=>rows.push([...tr.children].filter(c=>c.textContent!=='操作'&&!c.querySelector('[data-task]')).map(c=>c.textContent)))});document.querySelectorAll('#content .panel').forEach(el=>{const v=el.querySelector(':scope > .ratevalue');if(v)rows.push([el.querySelector('h2').textContent,v.textContent,el.querySelector('.fraction').textContent,el.querySelector('.chartfoot').textContent])});document.querySelectorAll('#content .barrow').forEach(r=>rows.push([r.children[0].textContent,r.children[2].textContent]));const csv='\ufeff'+rows.map(r=>r.map(c=>'"'+String(c).replaceAll('"','""')+'"').join(',')).join('\r\n');const a=document.createElement('a'),url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.href=url;a.download=`乎零-${labels[page]}-演示数据.csv`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);$('#toast').textContent='已导出当前页面数据（CSV · 演示样本）';$('#toast').style.display='block';setTimeout(()=>$('#toast').style.display='none',2500)};
+// 指标词典：页面上的卡片、表头、单元格与图表共用同一份定义。
+const metricDefinitions = {
+ '累计注册用户':'截至所选日期结束，累计成功注册的去重账号数。作为注册用户渗透率的分母；注销账号的历史保留口径待接入时确认。',
+ '当前绑定戒指':'截至所选日期结束，至少绑定一枚戒指的去重用户数。一人绑定多枚只计一人。',
+ '检测到佩戴的用户':'所选日 / 月 / 年内至少有一次有效佩戴记录，且属于期末绑定人群的去重用户。蓝牙连接不等于佩戴；缺失数据归为未知。',
+ '戒指绑定率':'当前绑定戒指用户数 ÷ 累计注册用户数 × 100%。分子、分母均取所选日期期末快照。',
+ '佩戴检出率':'所选周期有佩戴记录的当前绑定用户数 ÷ 当前绑定用户数 × 100%。分子按用户去重；数据未知仍在分母，所以同时展示数据覆盖率。',
+ '录音活跃用户':'所选周期内至少有一条有效录音的去重用户数。戒指与手机合并去重；有效性复用转写链路的声音 / 文本判定，待判定不计入已确认有效。',
+ '录音活跃率':'周期内至少有一条有效录音的去重用户数 ÷ 期末累计注册用户数 × 100%。戒指和手机合并去重；月 / 年不累加日人数。',
+ '戒指有效录音活跃率':'周期内产生有效戒指录音的当前绑定用户数 ÷ 期末绑定用户数 × 100%。一人多次录音只计一人。',
+ '手机有效录音活跃率':'周期内产生至少一条有效手机录音的用户数 ÷ 期末累计注册用户数 × 100%。与“启动手机录音”分开统计。',
+ '双来源使用占比':'周期内同时有有效戒指录音和有效手机录音的用户数 ÷ 总录音活跃用户数 × 100%。总人数已去重。',
+ 'App DAU':'所选完整日内至少一次前台使用 App 的去重用户数。后台同步、后台请求和推送送达不算前台活跃。',
+ 'App MAU':'所选自然月截至所选日期，至少一次前台使用 App 的去重用户数。不累加每日 DAU，也不是滚动 30 天。',
+ 'App 年活跃用户':'所选自然年截至所选日期，至少一次前台使用 App 的去重用户数。不累加各月 MAU。',
+ 'App 活跃率':'所选周期 App 前台活跃用户数 ÷ 期末累计注册用户数 × 100%。日 / 月 / 年分别去重。',
+ '佩戴后，有多少人触发录音？':'戒指录音触发率 = 同周期既有佩戴记录又启动过戒指录音的用户数 ÷ 检测到佩戴的用户数 × 100%。取两类用户交集；启动不要求最终产生有效录音。',
+ '手机录音触发率':'同周期 App 活跃用户中启动过手机录音的人数 ÷ App 活跃用户数 × 100%。开始录音即触发，一人多次启动只计一次。',
+ '有效录音率':'此处为用户转化率：佩戴且触发戒指录音的用户中，至少产生一条有效戒指录音的人数 ÷ 该批触发用户数。不是有效录音条数占比。',
+ '持续佩戴率':'讨论口径：最近 7 个完整日，每天累计佩戴 ≥6 小时的人数 ÷ 窗口开始前已绑定且 7 天数据完整的人数 × 100%。日 / 月 / 年视图均使用截至所选日的滚动 7 日窗口；缺失样本单独披露。',
+ '长时佩戴占比':'每天累计佩戴 ≥12 小时的人数 ÷ 当天有佩戴记录的人数。月 / 年以对应人日汇总后相除。衡量单日时长，不表示连续多天佩戴。',
+ '佩戴数据覆盖率':'已知佩戴状态的绑定用户（或人日）÷ 全部绑定用户（或人日）× 100%。已知未佩戴算有数据；未知不算。',
+ '佩戴时长分布':'每天将有效佩戴区间合并去重后累加，按累计小时数分档。日单位为人，月 / 年为人日；各档百分比的分母含已知未佩戴与数据未知。',
+ '0–2 小时':'0 < 当日累计佩戴时长 < 2 小时。人数 / 人日占全部绑定用户 / 人日的比例；0 小时另列已知未佩戴。',
+ '2–6 小时':'2 ≤ 当日累计佩戴时长 < 6 小时。分母为全部绑定用户 / 人日，含数据未知。',
+ '6–12 小时':'6 ≤ 当日累计佩戴时长 < 12 小时。分母为全部绑定用户 / 人日，含数据未知。',
+ '12–24 小时':'12 ≤ 当日累计佩戴时长 ≤ 24 小时。分母为全部绑定用户 / 人日；与“长时佩戴占比”的有佩戴分母不同。',
+ '已知未佩戴':'当日观测足以确认累计佩戴为 0 的绑定用户 / 人日。断连或没有上报不直接判为未佩戴。占比分母为全部绑定用户 / 人日。',
+ '数据未知':'当日佩戴数据不足、无法判断佩戴时长的绑定用户 / 人日。占比分母为全部绑定用户 / 人日；不能当作未佩戴。',
+ '录音活跃趋势':'每个数据点按点所在日 / 月去重，区分戒指、手机来源；同一人可出现在两条曲线。月视图抽样显示日人数，年视图显示月人数，原型均为合成数据。',
+ '生成待办':'同一成熟生成批次内，AI 生成的独立待办条目数。排除录音容器、备忘、手动待办和重试重复条目；用户删除不缩小历史分母。',
+ '7 日确认率':'生成后 7×24 小时内被确认的待办数 ÷ 同一生成批次的待办数 × 100%。直接确认与修改后确认都算；未满 7 日的批次标为观察中，不混入最终值。',
+ '24 小时确认率':'生成后 24 小时内被确认的条目数 ÷ 同一成熟生成批次的待办数 × 100%。跨日确认仍归属于原生成批次。',
+ '确认耗时中位数':'已确认条目中，从生成到首次确认的时长第 50 百分位。仅使用观察窗内已确认样本；未确认条目不记作 0。',
+ '直接确认':'观察窗内未修改生成内容就确认的待办条数。该状态占比 = 直接确认条数 ÷ 同批生成总数。',
+ '修改后确认':'观察窗内用户修改内容后确认的待办条数。该状态占比以同批生成总数为分母，不是以确认条数为分母。',
+ '明确不要':'截至生成后第 7 日，用户明确拒绝且尚未确认的条目数。占比以同批生成总数为分母；不因拒绝而从分母移除。',
+ '尚未确认':'截至生成后第 7 日，既未确认也未明确拒绝的条目数。占比以同批生成总数为分母；不等于明确拒绝。',
+ '用户确认':'同批待办在生成后 7 日内首次被确认的条目数。批量确认按条目计数；重复点击和同步重试不重复计数。',
+ '确认后完成':'同批待办中，在生成后第 7 日前已确认且完成的条目数。完成率 = 这些条目数 ÷ 同批已确认条目数；不是最终生命周期完成率。',
+ '使用人数':'所选周期 App 活跃人群中，至少成功使用过该功能一次的去重人数。一人多次使用只计一人。',
+ '使用率':'所选周期 App 活跃人群内该功能使用人数 ÷ 同周期 App 活跃人数 × 100%。分子必须属于分母人群。',
+ '成功次数':'所选周期内对应功能成功执行的操作次数。允许一人多次使用；失败操作和同一次操作的上报重试不重复计数。',
+ '处理成功率':'截至统计时已进入终态的录音任务中，最终成功任务数 ÷（最终成功数 + 最终失败数）× 100%。重试后成功算成功；排队 / 处理中不算终态。',
+ 'ASR 平均耗时':'成功 ASR 尝试从请求发出到完整转写结果返回的耗时之和 ÷ 成功尝试数。排队不含在内；超时和失败另计。',
+ 'ASR 耗时比':'成功 ASR 尝试的总转写耗时 ÷ 对应音频总时长。越小越快；0.08 表示处理耗时约为音频时长的 8%，约 12.5 倍实时速度。',
+ '当前排队':'演示快照时刻已入队、尚未开始处理的独立任务数，不是所选周期的累计入队次数。超 60 秒表示当前等待已超过该阈值。',
+ '戒指 → 手机':'从本次蓝牙音频传输开始，到手机完整接收音频为止。录音结束后尚未开始同步的离线等待不计入；失败尝试另记。',
+ '手机 → 云端':'从手机本次上传开始，到服务端确认完整收齐音频为止。按尝试记录，含该尝试的传输等待；不含上传前离线等待。',
+ '等待处理':'服务端任务入队到实际开始执行的时间。尚未出队的任务展示当前等待时长，不混入已完成耗时分布。',
+ 'ASR 转写':'单次 ASR 请求发出到完整转写结果返回的耗时。排队、后续整理不计入；失败和重试尝试单独保留。',
+ '整理与待办':'从内容处理开始，到整理文本和待办提取结果就绪的耗时。失败、重试另记；不是 ASR 耗时。',
+ '转写任务（含排队 / 重试）':'云端收齐音频到完整转写结果落库的端到端耗时，包含队列等待与该任务的 ASR 重试。',
+ '云端完整处理':'云端收齐音频到转写、整理与待办全部就绪的端到端耗时。包含排队与重试；各阶段的 P95 / P99 不可直接相加。',
+ '平均':'同一阶段成功样本的耗时之和 ÷ 成功样本数。失败、超时和仍在处理的样本另列，不记作 0。',
+ 'P50':'成功样本耗时的第 50 百分位（中位数），约一半样本不超过此值。按当前阶段和当前周期独立计算。',
+ 'P95':'成功样本耗时的第 95 百分位，约 95% 样本不超过此值；反映较慢用户体验。不能将不同阶段 P95 相加。',
+ 'P99':'成功样本耗时的第 99 百分位，约 99% 样本不超过此值。样本少时不稳定，需同时查看成功样本数。',
+ '成功样本数':'参与本行耗时统计的成功阶段样本数量。每个阶段独立计数；不是用户数，也不等于全链路成功任务数。',
+ '失败率':'对应阶段最终失败任务数 ÷ 该阶段已进入终态的任务总数 × 100%。重试后成功不算最终失败，排队 / 处理中另列。',
+ '音频时长':'音频内容本身的时长，不是上传或转写耗时。分组边界：≤30 秒、>30 秒且≤2 分钟、>2 且≤10 分钟、>10 分钟。',
+ '任务耗时':'已完成 / 失败任务从云端收齐音频到终态的耗时；处理中展示当前已等待时间；无效录音展示到完成判定的耗时。',
+ '状态':'已完成：完整结果就绪；处理中：排队或执行中；失败：最终处理失败；无效录音：现有有效性判定未通过，不与基础设施失败混为一类。',
+ '上传超时':'最终失败原因为上传超时的独立录音任务数。重试后上传成功的任务不计入该失败原因。',
+ '转写超时':'最终失败原因为 ASR 超时的独立录音任务数。重试后转写成功不计入。',
+ '音频损坏':'音频无法完整解码等损坏导致的最终失败任务数。与没有有效语音 / 文本的无效录音分开。',
+ '内容处理失败':'ASR 后整理或待办提取最终失败的独立任务数。重试成功不计入。'
+};
+Object.assign(metricDefinitions,{
+ '累计注册':metricDefinitions['累计注册用户'],'总录音活跃率':metricDefinitions['录音活跃率'],
+ 'App 年活跃':metricDefinitions['App 年活跃用户'],'确认后完成率':metricDefinitions['确认后完成'],
+ '修改后确认占全部':metricDefinitions['修改后确认'],'平均耗时':metricDefinitions['平均'],
+ 'ASR 按音频长度比较':metricDefinitions['音频时长'],'绑定率':metricDefinitions['戒指绑定率'],
+ '占注册用户':'本行去重用户数 ÷ 所选日期期末累计注册用户数 × 100%。用于比较人群规模，不是留存率。',
+ '生成条数':metricDefinitions['生成待办'],'人数':'本行所述人群的去重用户数量；期末规模与周期活跃请按行指标定义区分。',
+ '云端完整处理 P95':metricDefinitions['云端完整处理']+' '+metricDefinitions['P95'],
+ '任务处理成功率':metricDefinitions['处理成功率'],
+ '长时佩戴占比 · ≥12 小时 / 有佩戴':metricDefinitions['长时佩戴占比'],
+ '佩戴数据覆盖率 · 已知 / 全部':metricDefinitions['佩戴数据覆盖率'],
+ '阶段':'本行处理阶段的起止点；悬浮对应阶段名称可查看完整边界。',
+ '来源':'戒指或手机录音来源。来源用户人数可重叠；总活跃人数需跨来源去重。',
+ '录音 ID':'录音的独立业务标识，用于关联上传、转写与结果。任务重试保留相同录音 ID，尝试记录分别保存。'
+});
+// 每个说明均采用 [计算公式 / 取值规则, 简短说明]。
+const metricNotes={
+'累计注册用户':['累计注册用户 = 截至期末成功注册的去重账号数','衡量累计用户规模；注销账号的历史保留口径待确认。'],
+'当前绑定戒指':['绑定用户数 = 期末至少绑定一枚戒指的去重用户数','同一用户绑定多枚戒指只计一人。'],
+'检测到佩戴的用户':['佩戴用户数 = 周期内有有效佩戴记录的绑定用户去重数','限定期末绑定人群；蓝牙连接不等于佩戴，缺失数据归为未知。'],
+'戒指绑定率':['绑定率 = 当前绑定用户数 ÷ 累计注册用户数 × 100%','分子和分母均取所选日期期末快照。'],
+'佩戴检出率':['佩戴率 = 周期内有佩戴记录的绑定用户数 ÷ 当前绑定用户数 × 100%','未知用户保留在分母中，需结合数据覆盖率一起看。'],
+'录音活跃用户':['录音活跃用户 = 周期内有 ≥1 条有效录音的去重用户数','戒指和手机合并去重；有效性沿用转写链路判定，待判定录音暂不计入。'],
+'录音活跃率':['录音活跃率 = 有效录音用户数 ÷ 累计注册用户数 × 100%','分子按所选周期去重，分母取期末；两种来源合并去重。'],
+'戒指有效录音活跃率':['戒指录音活跃率 = 有有效戒指录音的绑定用户数 ÷ 当前绑定用户数 × 100%','周期内至少一条有效戒指录音；分子限定期末绑定人群。'],
+'手机有效录音活跃率':['手机录音活跃率 = 有效手机录音用户数 ÷ 累计注册用户数 × 100%','分子按周期去重，分母取期末；启动录音但未产生有效结果不算活跃。'],
+'双来源使用占比':['双来源占比 = 两种来源都有有效录音的用户数 ÷ 总录音活跃用户数 × 100%','分子取交集，分母取去重并集。'],
+'App DAU':['DAU = 当日前台使用过 App 的去重用户数','后台同步、后台请求和推送送达不计入。'],
+'App MAU':['MAU = 当月前台使用过 App 的去重用户数','按自然月截至所选日期统计；不累加 DAU，不是滚动 30 天。'],
+'App 年活跃用户':['年活跃用户 = 当年前台使用过 App 的去重用户数','按自然年截至所选日期统计，不累加 MAU。'],
+'App 活跃率':['App 活跃率 = 周期内 App 活跃用户数 ÷ 累计注册用户数 × 100%','日、月、年分别去重；注册用户数取期末。'],
+'佩戴后，有多少人触发录音？':['戒指触发率 = 佩戴且启动戒指录音的用户数 ÷ 佩戴用户数 × 100%','在同一周期取人群交集；启动即触发，不要求最终录音有效。'],
+'手机录音触发率':['手机触发率 = App 活跃人群中启动手机录音的人数 ÷ App 活跃人数 × 100%','同周期统计；每人多次启动只计一次。'],
+'有效录音率':['有效录音率 = 触发用户中产生有效录音的人数 ÷ 触发录音人数 × 100%','此处限定佩戴且触发戒指录音的人群，统计的是用户转化，不是录音条数占比。'],
+'持续佩戴率':['持续佩戴率 = 连续 7 天每天佩戴 ≥6 小时的人数 ÷ 期初已绑定且 7 天数据完整的人数 × 100%','暂定阈值；始终使用截至所选日的滚动 7 个完整日，缺失用户单列。'],
+'长时佩戴占比':['长时佩戴占比 = 每日佩戴 ≥12 小时的人数 ÷ 每日有佩戴人数 × 100%','月、年用对应人日汇总后相除；不代表连续多天佩戴。'],
+'佩戴数据覆盖率':['数据覆盖率 = 佩戴状态已知人数 ÷ 全部绑定人数 × 100%','已知未佩戴也算有数据；月、年按人日计算。'],
+'佩戴时长分布':['分档占比 = 该时长档人数 ÷ 全部绑定人数 × 100%','每日佩戴区间合并去重后累加；月、年按人日，分母含未知。'],
+'0–2 小时':['占比 = 0 < 佩戴时长 < 2 小时的人数 ÷ 全部绑定人数 × 100%','按每日累计时长分档；月、年按人日。0 小时另列。'],
+'2–6 小时':['占比 = 2 ≤ 佩戴时长 < 6 小时的人数 ÷ 全部绑定人数 × 100%','按每日累计时长分档；月、年按人日，分母含未知。'],
+'6–12 小时':['占比 = 6 ≤ 佩戴时长 < 12 小时的人数 ÷ 全部绑定人数 × 100%','按每日累计时长分档；月、年按人日，分母含未知。'],
+'12–24 小时':['占比 = 12 ≤ 佩戴时长 ≤ 24 小时的人数 ÷ 全部绑定人数 × 100%','分母包含未知，与“长时佩戴占比”的分母不同；月、年按人日。'],
+'已知未佩戴':['未佩戴占比 = 已确认佩戴时长为 0 的人数 ÷ 全部绑定人数 × 100%','断连或没有上报不能直接算未佩戴；月、年按人日。'],
+'数据未知':['未知占比 = 佩戴数据不足的人数 ÷ 全部绑定人数 × 100%','未知不等于未佩戴；月、年按人日。'],
+'录音活跃趋势':['每点活跃人数 = 该日或该月有有效录音的去重用户数','分别统计戒指、手机；同一人可出现在两条曲线。月视图展示日点，年视图展示月点。'],
+'生成待办':['生成条数 = 同批次 AI 生成的独立待办条目数','排除录音容器、备忘、手动待办及重试重复条目；删除不缩小历史分母。'],
+'7 日确认率':['7 日确认率 = 生成后 7 日内确认条数 ÷ 同批生成条数 × 100%','含直接确认和修改后确认；未满 7 日的批次不计入最终值。'],
+'24 小时确认率':['24 小时确认率 = 生成后 24 小时内确认条数 ÷ 同批生成条数 × 100%','按生成批次归属，跨日确认仍归入原批次。'],
+'确认耗时中位数':['确认耗时中位数 = P50（首次确认时间 − 生成时间）','仅统计观察窗内已确认条目；未确认条目不记作 0。'],
+'直接确认':['直接确认占比 = 未修改就确认的条数 ÷ 同批生成条数 × 100%','在生成后 7 日观察窗内统计。'],
+'修改后确认':['修改后确认占比 = 修改内容后确认的条数 ÷ 同批生成条数 × 100%','分母为生成总数，不是已确认数。'],
+'明确不要':['拒绝占比 = 明确拒绝且未确认条数 ÷ 同批生成条数 × 100%','以生成后第 7 日状态为准；拒绝不移出分母。'],
+'尚未确认':['未确认占比 = 未确认且未明确拒绝条数 ÷ 同批生成条数 × 100%','以生成后第 7 日状态为准；不等于拒绝。'],
+'用户确认':['确认条数 = 同批次生成后 7 日内首次确认的条目数','批量确认按条目计数，点击和同步重试不重复计数。'],
+'确认后完成':['完成率 = 同批已确认且完成条数 ÷ 同批已确认条数 × 100%','截至生成后第 7 日观察，不代表最终生命周期完成率。'],
+'使用人数':['使用人数 = App 活跃人群内成功使用该功能的去重人数','同一周期统计；一人多次使用只计一人。'],
+'使用率':['功能使用率 = 该功能使用人数 ÷ App 活跃人数 × 100%','分子限定同周期 App 活跃人群。'],
+'成功次数':['成功次数 = 周期内该功能成功执行的独立操作数','同一用户可贡献多次；失败和同次操作的重试上报不重复计数。'],
+'处理成功率':['成功率 = 最终成功任务数 ÷（最终成功数 + 最终失败数）× 100%','重试后成功算成功；排队和处理中尚未进入终态，不计入分母。'],
+'ASR 平均耗时':['平均耗时 = 成功 ASR 尝试总耗时 ÷ 成功尝试数','从请求发出到完整转写返回；不含排队，失败和超时另计。'],
+'ASR 耗时比':['ASR 耗时比 = 成功尝试总转写耗时 ÷ 对应音频总时长','越小越快；0.08 约等于 12.5 倍实时速度。'],
+'当前排队':['当前排队数 = 快照时刻已入队且尚未开始执行的任务数','不是周期累计入队次数；超过 60 秒按当前等待时长判断。'],
+'戒指 → 手机':['传输耗时 = 手机完整接收时间 − 蓝牙传输开始时间','不含录音结束后、同步开始前的离线等待；失败尝试另记。'],
+'手机 → 云端':['上传耗时 = 云端确认收齐时间 − 本次上传开始时间','按上传尝试记录，不含上传前离线等待。'],
+'等待处理':['排队耗时 = 开始执行时间 − 任务入队时间','仍在排队的任务展示当前等待时长，不混入已完成分布。'],
+'ASR 转写':['ASR 耗时 = 完整转写返回时间 − ASR 请求发出时间','不含排队和后续整理；失败和重试尝试单独保存。'],
+'整理与待办':['处理耗时 = 整理及待办就绪时间 − 内容处理开始时间','统计 ASR 后的内容处理，失败和重试另记。'],
+'转写任务（含排队 / 重试）':['转写任务耗时 = 完整转写落库时间 − 云端收齐音频时间','包含排队和任务内 ASR 重试。'],
+'云端完整处理':['完整处理耗时 = 全部结果就绪时间 − 云端收齐音频时间','包含排队、转写、整理、待办及重试；分位数不能按阶段相加。'],
+'平均':['平均耗时 = 成功样本耗时之和 ÷ 成功样本数','失败、超时与处理中样本另列，不记作 0。'],
+'P50':['P50 = 排序后第 ⌈样本数 × 50%⌉ 个耗时','成功样本的中位数；按当前阶段和周期独立计算。'],
+'P95':['P95 = 排序后第 ⌈样本数 × 95%⌉ 个耗时','约 95% 的成功样本不超过此值；各阶段 P95 不可相加。'],
+'P99':['P99 = 排序后第 ⌈样本数 × 99%⌉ 个耗时','约 99% 的成功样本不超过此值；样本少时参考性有限。'],
+'成功样本数':['样本数 = 本阶段参与耗时统计的成功样本数量','各阶段独立统计，不是用户数或全链路成功任务数。'],
+'失败率':['失败率 = 阶段最终失败数 ÷ 阶段终态任务数 × 100%','终态包括成功与失败；重试后成功不算失败，处理中另列。'],
+'音频时长':['音频时长 = 音频内容的实际播放时长','与上传、转写耗时不同；分档为 ≤30 秒、(30 秒,2 分钟]、(2,10 分钟]、>10 分钟。'],
+'任务耗时':['任务耗时 = 终态时间 − 云端收齐音频时间','处理中以当前时间为终点；无效录音以判定完成为终点。'],
+'状态':['状态 ∈ {已完成，处理中，失败，无效录音}','已完成表示结果就绪；处理中含排队；无效录音与服务失败分开。'],
+'占注册用户':['占比 = 本行去重用户数 ÷ 期末累计注册用户数 × 100%','用于比较用户规模，不是留存率。'],
+'人数':['人数 = 对应人群的去重用户数','累计或周期口径以本行指标为准。'],
+'阶段':['阶段 = 当前处理链路的环节名称','悬浮具体阶段名称，可查看其起止时间定义。'],
+'来源':['来源 ∈ {戒指，手机}','来源人数可重叠；总人数需跨来源去重。'],
+'录音 ID':['录音 ID = 每条录音的唯一业务标识','关联上传与处理结果；重试沿用录音 ID，尝试记录独立保存。']
+};
+const noteAliases={'累计注册':'累计注册用户','总录音活跃率':'录音活跃率','App 年活跃':'App 年活跃用户','确认后完成率':'确认后完成','修改后确认占全部':'修改后确认','平均耗时':'平均','ASR 按音频长度比较':'音频时长','绑定率':'戒指绑定率','生成条数':'生成待办','任务处理成功率':'处理成功率','长时佩戴占比 · ≥12 小时 / 有佩戴':'长时佩戴占比','佩戴数据覆盖率 · 已知 / 全部':'佩戴数据覆盖率'};
+for(const [alias,key] of Object.entries(noteAliases))metricNotes[alias]=metricNotes[key];
+metricNotes['云端完整处理 P95']=['完整处理 P95 = 完整云端任务耗时的第 95 百分位','从云端收齐音频至全部结果就绪；仅统计成功任务。'];
+for(const reason of ['上传超时','转写超时','音频损坏','内容处理失败'])metricNotes[reason]=[`${reason}任务数 = 最终失败原因属于“${reason}”的去重任务数`,'重试成功不算最终失败；无有效语音 / 文本不与音频损坏混为一类。'];
+Object.assign(metricNotes,{
+ '有效传输速率':['有效传输速率 = 成功接收的有效字节总量 ÷ 对应传输总耗时','单位 KB/s，越高越好。每个文件有效字节只计一次，耗时含重试等待；不含传输前离线等待。'],
+ 'P50 传输速率':['P50 速率 = 文件速率升序排列后第 ⌈N × 50%⌉ 项','每个文件速率 = 有效字节 / 从首次传输开始至最终接收完成的耗时；仅统计成功文件，代表典型速度。'],
+ 'P5 传输速率':['P5 速率 = 文件速率升序排列后第 ⌈N × 5%⌉ 项','约 5% 成功文件速率不高于此值，用来观察慢速一侧；样本较少时参考性有限。'],
+ '每分钟录音传输耗时':['每分钟传输耗时 = 成功文件总传输秒数 ÷ 对应录音总分钟数','单位秒/分钟，越低越好；包含重试等待。受音频编码、压缩率影响，建议同格式比较。'],
+ '首次传输成功率':['首次成功率 = 无需重试即成功的文件数 ÷ 首次尝试已结束的文件数 × 100%','首次失败后重试成功仍不计入分子；尚在首次传输的文件不计分母。'],
+ '首次成功 / 首次尝试已结束':['计数 = 首次成功文件数 / 首次尝试已结束文件数','展示首次传输成功率的分子与分母，按文件去重；不统计仍在进行的首次尝试。'],
+ '文件大小':['文件大小 = 此链路实际传输音频的有效字节数','不含重传字节。KB 为 1,000 字节、MB 为 1,000,000 字节；按表中边界分档。'],
+ '戒指有效速率':['戒指有效速率 = 本大小档蓝牙成功接收总字节 ÷ 对应总传输耗时','仅比较同链路、同大小档；包含重试等待，重传字节不重复计入。'],
+ '云端有效速率':['云端有效速率 = 本大小档云端成功接收总字节 ÷ 对应总上传耗时','仅比较同链路、同大小档；包含重试等待，传输前离线等待单列。'],
+ '传输阶段':['传输阶段 ∈ {戒指 → 手机，手机 → 云端}','蓝牙传输与网络上传分开统计，不直接混合比较速度。']
+});
+metricNotes['戒指 → 手机']=['有效速率 = 手机成功接收的有效字节总量 ÷ 蓝牙传输总耗时','从首次蓝牙传输开始计时至最终完整接收，包含重试等待；不含同步前离线等待。原始耗时保留在明细中。'];
+metricNotes['手机 → 云端']=['有效速率 = 云端成功接收的有效字节总量 ÷ 云端上传总耗时','从首次上传开始至云端确认完整接收，包含重试等待；不含上传前离线等待。原始耗时保留在明细中。'];
+for(const key of ['有效传输速率','P50 传输速率','P5 传输速率','每分钟录音传输耗时','首次传输成功率','首次成功 / 首次尝试已结束','文件大小','戒指有效速率','云端有效速率','传输阶段','戒指 → 手机','手机 → 云端'])metricDefinitions[key]=metricNotes[key].join('。');
+function metricNote(name){
+ if(metricNotes[name])return metricNotes[name];
+ const parts=name.split(' · '),column=parts[parts.length-1];
+ if(column==='数值'&&metricNotes[parts[0]])return metricNotes[parts[0]];
+ if(parts.length>1&&metricNotes[column]){const note=metricNotes[column];return [note[0],`适用对象：${parts.slice(0,-1).join(' · ')}。${note[1]}`];}
+ return [`${name}使用率 = 使用该功能的人数 ÷ App 活跃人数 × 100%`,'分子限定同周期 App 活跃人群；使用人数去重，成功次数可累计。'];
+}
+
+const metricTip=document.createElement('div');metricTip.id='metricTip';metricTip.setAttribute('role','tooltip');metricTip.hidden=true;document.body.append(metricTip);
+let helpTarget=null,helpPinned=false,helpTimer;
+function hideMetricHelp(){clearTimeout(helpTimer);if(helpTarget)helpTarget.removeAttribute('aria-describedby');helpTarget=null;helpPinned=false;metricTip.hidden=true;}
+function positionMetricHelp(){if(!helpTarget)return;const r=helpTarget.getBoundingClientRect();const w=metricTip.offsetWidth,h=metricTip.offsetHeight;let left=Math.max(12,Math.min(r.left,innerWidth-w-12));let top=r.bottom+9;if(top+h>innerHeight-12)top=Math.max(12,r.top-h-9);metricTip.style.left=left+'px';metricTip.style.top=top+'px';}
+function showMetricHelp(el,pinned=false){clearTimeout(helpTimer);if(helpTarget&&helpTarget!==el)helpTarget.removeAttribute('aria-describedby');helpTarget=el;helpPinned=pinned;metricTip.replaceChildren();const note=metricNote(el.dataset.metricName);const formula=document.createElement('div');formula.className='metric-formula';formula.textContent=note[0];const body=document.createElement('div');body.className='metric-explanation';body.textContent=note[1];const foot=document.createElement('small');foot.textContent='讨论口径 · 演示数据｜Esc 关闭';metricTip.append(formula,body,foot);metricTip.hidden=false;el.setAttribute('aria-describedby','metricTip');positionMetricHelp();}
+
+function attachMetricHelp(){hideMetricHelp();const put=(el,name,definition)=>{if(!el||!definition)return;el.dataset.metricName=name;el.dataset.metricHelp=definition;el.classList.add('metric-help');el.tabIndex=0;};
+ document.querySelectorAll('#content .stat').forEach(el=>{let name=el.querySelector('.label').textContent.trim();put(el,name,metricDefinitions[name]);});
+ document.querySelectorAll('#content h2,#content .summaryline small,#content .donutinner small,#content .barrow > span,#content .funnelrow > span').forEach(el=>{let name=el.textContent.trim();put(el,name,metricDefinitions[name]);});
+ document.querySelectorAll('#content .panel').forEach(el=>{const h=el.querySelector('h2');if(h){const name=h.textContent.trim();el.querySelectorAll(':scope > .ratevalue,:scope > .fraction').forEach(v=>put(v,name,metricDefinitions[name]));}});
+ document.querySelectorAll('#content .summaryline > div').forEach(el=>{let name=el.querySelector('small')?.textContent.trim();put(el,name,metricDefinitions[name]);});
+ document.querySelectorAll('#content .barrow,#content .funnelrow').forEach(el=>{let name=el.querySelector('span')?.textContent.trim();put(el,name,metricDefinitions[name]);});
+ document.querySelectorAll('#content .flow > div').forEach(el=>{let name=el.firstChild.textContent.trim();put(el,name,metricDefinitions[name]);});
+ document.querySelectorAll('#content .chart').forEach(el=>put(el,'录音活跃趋势',metricDefinitions['录音活跃趋势']));
+ document.querySelectorAll('#content table').forEach(t=>{const heads=[...t.querySelectorAll('th')].map(el=>el.textContent.trim());t.querySelectorAll('th').forEach((el,i)=>put(el,heads[i],metricDefinitions[heads[i]]));t.querySelectorAll('tbody tr').forEach(tr=>{let row=tr.cells[0]?.textContent.trim();[...tr.cells].forEach((cell,i)=>{if(cell.querySelector('button'))return;let head=heads[i],desc=i===0?metricDefinitions[row]:(metricDefinitions[head]||metricDefinitions[row]);if(i===0&&!desc&&heads.includes('使用率'))desc=`${row}：所选周期内，App 活跃用户中至少成功使用该功能一次的去重人数；使用率以同周期 App 活跃人数为分母。`;if(i>0&&desc&&metricDefinitions[row])desc=metricDefinitions[row]+'\n'+desc;put(cell,i?row+' · '+head:row,desc);});});});
+ // 文字内的次级比率也可独立查看，不影响 CSV 中的可见文字。
+ document.querySelectorAll('#content .notice').forEach(el=>{if(el.textContent.startsWith('手机录音触发率'))put(el,'手机录音触发率',metricDefinitions['手机录音触发率']);});
+ document.querySelectorAll('#content .chartfoot b').forEach(el=>put(el,'有效录音率',metricDefinitions['有效录音率']));
+}
+document.addEventListener('pointerover',e=>{let el=e.target.closest?.('[data-metric-help]');if(el&&!helpPinned)showMetricHelp(el);});
+document.addEventListener('pointerout',e=>{if(helpPinned)return;const el=e.target.closest?.('[data-metric-help]');if(el&&!el.contains(e.relatedTarget)&&!metricTip.contains(e.relatedTarget))helpTimer=setTimeout(hideMetricHelp,140);});
+metricTip.addEventListener('pointerenter',()=>clearTimeout(helpTimer));metricTip.addEventListener('pointerleave',()=>{if(!helpPinned)hideMetricHelp()});
+document.addEventListener('focusin',e=>{let el=e.target.closest?.('[data-metric-help]');if(el)showMetricHelp(el);});
+document.addEventListener('focusout',e=>{if(e.target.closest?.('[data-metric-help]')&&!helpPinned)hideMetricHelp()});
+document.addEventListener('click',e=>{const el=e.target.closest?.('[data-metric-help]');if(el){if(helpTarget===el&&helpPinned)hideMetricHelp();else showMetricHelp(el,true);}else if(!metricTip.contains(e.target))hideMetricHelp();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')hideMetricHelp();if((e.key==='Enter'||e.key===' ')&&e.target.matches?.('[data-metric-help]')){e.preventDefault();showMetricHelp(e.target,true);}});
+window.addEventListener('resize',hideMetricHelp);document.addEventListener('scroll',hideMetricHelp,true);
+const baseRender=render;render=function(){baseRender();attachMetricHelp();};
+const baseTaskTable=taskTable;taskTable=function(){baseTaskTable();attachMetricHelp();};
+
+render();
+</script></body></html>
